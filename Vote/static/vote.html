@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
+    <title>Vote Application</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="title">
+                <h1>HOW DO YOU FEEL?</h1>
+            </div>
+            <div class="main">
+                <div class="left-row">
+                    <div class="emotion happy" onclick="vote('happy')">
+                        <img src="assets/Happy-Emoji.svg" alt="happy">
+                        <h1>Happy</h1>
+                    </div>
+                    <div class="emotion excited" onclick="vote('excited')">
+                        <img src="assets/Excited-Emoji.svg" alt="excited">
+                        <h1>Excited</h1>
+                    </div>
+                    <div class="emotion sad" onclick="vote('sad')">
+                        <img src="assets/Sad-Emoji.svg" alt="sad">
+                        <h1>Sad</h1>
+                    </div>
+                </div>
+                <div class="right-row">
+                    <div class="emotion angry" onclick="vote('angry')">
+                        <img src="assets/Angry-Emoji.svg" alt="angry">
+                        <h1>Angry</h1>
+                    </div>
+                    <div class="emotion sick" onclick="vote('sick')">
+                        <img src="assets/Sick-Emoji.svg" alt="sick">
+                        <h1>Sick</h1>
+                    </div>
+                    <div class="emotion loving" onclick="vote('loving')">
+                        <img src="assets/Loving-Emoji.svg" alt="loving">
+                        <h1>Loving</h1>
+                    </div>
+                </div>
+            </div>
+            <section class="vote-counter">
+                <div class="counter">
+                    <h2>Vote Counts:</h2>
+                    <p id="happyCount">Happy: 0</p>
+                    <p id="excitedCount">Excited: 0</p>
+                    <p id="sadCount">Sad: 0</p>
+                    <p id="angryCount">Angry: 0</p>
+                    <p id="sickCount">Sick: 0</p>
+                    <p id="lovingCount">Loving: 0</p>
+                </div>
+                <div class="voted">
+                    <h2>Most Voted Emotion:</h2>
+                    <img src="" alt="" id="mostVoted" class="mostVoted">
+                </div>
+            </section>
+        </nav>
+    </header>
+</body>
+</html>

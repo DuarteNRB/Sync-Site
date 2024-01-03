@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(26, 26, 26);
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+}
+
+.title{
+    color: white;
+    font-size: 18px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    gap: 20px;
+
+}
+
+.left-row{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    margin-left: 8px;
+
+}
+
+.right-row{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    margin-right: 8px;
+}
+
+
+
+
+.emotion{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    img{
+        height: 100px;
+        align-items: center;
+        background-color: rgb(103, 103, 103);
+    }
+    h1{
+        width: 70px;
+        color: white;
+        font-size: 17px;
+        background-color: rgb(103, 103, 103);
+    }
+    padding: 5px 10px;
+    background-color: rgb(103, 103, 103);
+    border-radius: 15px;
+    margin: 10px 10px;
+    width: 130px;
+}
+
+//Ajusting the emojis Individually
+
+
+
+@media screen and (max-width: 430px){
+    .counter{
+        display: none;
+    }
+}
+
+.vote-counter{
+    color: white;
+    text-align: center;
+    margin-top: 70px;
+    h2{
+        font-size: 20px;
+    }
+}
+
+.mostVoted{
+    width: 400px;
+
+}
+
+@media screen and (min-width:430px){
+    .left-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        gap: 50px;
+        margin-left: 0px;
+    
+    }
+    
+    .right-row{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        margin-right: 0px;
+    }
+
+    .main{
+        width: 100%;
+        display: flex;
+        gap: 50px;
+    }
+
+    .emotion{
+        max-width: 120px;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="live-styles.css">
+    <script src="poll.js"></script>
+    <title>Tomorrowland - 2024</title>
+</head>
+<body>
+    <div class="top">
+        <a class="logo" href="../Main/main-index.html">
+            <img src="../Main/assets/Logo1.svg" alt="">
+        </a>
+        <div class="result" id="resultContainer">
+            <h1 class="res" id="resultContainer"></h1>
+        </div>
+        <div class="functions">
+            <img src="../Main/assets/search.svg" alt="">
+            <img src="../Main/assets/settings.svg" alt="">
+        </div>
+    </div>
+    <div class="main">
+        <div class="left">
+            <div class="top1">
+                <h1 class="title">TOMORROWLAND 2024</h1>
+                <p class="notify">NOTIFY ME!</p>
+            </div>
+            <div class="video-player">
+                <video id="myVideo" class="player" autoplay controls preload="auto">
+                    <source id="videoSource" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="right">
+            <div class="emotion">
+                <div class="buttons">
+                    <button class="return" onclick="resetVideo()">
+                        <img src="assets/return.svg" class="return-only">
+                    </button>
+                    <button class="switch" onclick="changeSequentialVideo()">
+                        <img src="assets/switch.svg" class="switch-only">
+                    </button>
+                </div>
+                <div class="emotion-video">
+                    <div class="video-container">
+                        <video id="video" class="video" loop muted autoplay>
+                            <source id="videoSrc" src="../LiveStream/assets/Emotion/Emotions-06.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img class="hover-image" src="qrcode-final.png" alt="Hover Image">
+                    </div>
+                </div>
+            </div>
+            <div class="chat">
+                <div class="flat">
+                    <div class="input">
+                        <h1 class="chat">Chat</h1>
+                        <div class="messager">
+                            <div class="message">
+                                <input type="text" id="textInput" placeholder="Enter a Message">
+                            </div>
+                            <div class="send">
+                                <button class="icon" onclick="clearInput()">
+                                    <img src="assets/Send.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Array of video file names in the same folder
+            var videoFileNames = [
+                'Comp1.mp4',
+                'DataScience.mp4',
+                'DuarteBernardes.mp4'
+                // Add more video file names as needed
+            ];
+
+            var currentVideoIndex = 0;
+            var currentTime = 0;
+
+            function changeSequentialVideo() {
+                // Get the video and source elements
+                var video = document.getElementById('myVideo');
+                var source = document.getElementById('videoSource');
+
+                // Store the current time
+                currentTime = video.currentTime;
+
+                // Set the video source to the current file name
+                source.src = videoFileNames[currentVideoIndex];
+
+                // Reload the video to apply the changes
+                video.load();
+
+                // Set the stored time for the new video
+                video.addEventListener('loadedmetadata', function() {
+                    video.currentTime = currentTime;
+                });
+
+                // Increment the counter for the next video
+                currentVideoIndex = (currentVideoIndex + 1) % videoFileNames.length;
+            }
+            function resetVideo() {
+                var video = document.getElementById('myVideo');
+                var source = document.getElementById('videoSource');
+
+                currentTime = video.currentTime;
+                
+                source.src = videoFileNames[0];
+                
+                video.load();
+
+                currentVideoIndex = 1;
+
+                video.addEventListener('loadedmetadata', function() {
+                    video.currentTime = currentTime;
+                });
+            }
+
+            function clearInput() {
+            var inputElement = document.getElementById('textInput');
+            inputElement.value = ''; // Set the value to an empty string
+            }
+
+            window.onload = resetVideo;
+    
+            function changeVideoSource() {
+            // Get the input value
+            var inputValue = document.getElementById("result").value.toLowerCase(); // Convert to lowercase for case-insensitivity
+
+            // Get the video element and video source element
+            var video = document.getElementById("video");
+            var videoSource = document.getElementById("videoSrc");
+
+            // Check if the input value equals a certain word
+            if (inputValue === "sad") {
+                // Change the video source if the condition is met
+                videoSource.src = "../assets/Emotion/Emotions-06.mp4";
+            } else {
+                // Use a default video source if the condition is not met
+                videoSource.src = "default.mp4";
+            }
+
+            // Load the new video source
+            video.load();
+            }
+
+            function updateHTML(result) {
+            // Update the content of the resultContainer with the obtained result
+            const resultContainer = document.getElementById("resultContainer");
+            resultContainer.textContent = result;
+            }
+
+</script>
+</html>

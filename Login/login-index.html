@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main">
+        <div class="logo">
+            <img src="assets/Logo1.svg" alt="" draggable="false">
+        </div>
+        <div class="sign">
+            <div class="title1">
+                <h1 class="title">Sign In</h1>
+            </div>
+            <div class="apps">
+                <img src="assets/google.svg" alt="" draggable="false">
+                <img src="assets/linkedin.svg" alt="" draggable="false">
+                <img src="assets/meta.svg" alt="" draggable="false">
+            </div>
+            <div class="or">
+                <p>or use email and password</p>
+            </div>
+            <div class="placeholder">
+                <input type="text" placeholder="Email" class="email">
+                <div class="pass">
+                    <input type="password" id="password" name="password" placeholder="Password" class="password">
+                    <button type="button" onclick="togglePassword()" class="eye">
+                        <img src="assets/eye.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="forgot">
+                <p>Forgot your Password?</p>
+            </div>
+            <div class="signin">
+                <a href="../Main/main-index.html" class="sign-in" draggable="false" id="pageLink">
+                    <button>SIGN IN</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+</body>
+<script>
+    function togglePassword() {
+        var passwordInput = document.getElementById('password');
+        
+        // Toggle the type attribute between 'password' and 'text'
+        passwordInput.type = (passwordInput.type === 'password') ? 'text' : 'password';
+    }
+
+    document.getElementById('pageLink').addEventListener('click', function(event) {
+        event.preventDefault();
+            
+        // Show loader
+        document.getElementById('loader').style.display = 'flex';
+
+        // Simulate delay (you can replace this with actual page loading logic)
+        setTimeout(function() {
+            // Hide loader
+            document.getElementById('loader').style.display = 'none';
+                
+            // Navigate to the new page
+            window.location.href = '../Main/main-index.html';
+        }, 1500); // Simulated delay of 2 seconds
+    });
+</script>
+</html>

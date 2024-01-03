@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 527.4 165.85">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3e29b2;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-family: MontserratRoman-Medium, Montserrat;
+        font-size: 149.55px;
+        font-variation-settings: 'wght' 500;
+        font-weight: 500;
+        letter-spacing: .01em;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(154.71 127.12)"><tspan x="0" y="0">Sync</tspan></text>
+  <rect class="cls-1" y="18.02" width="116.9" height="113.46" rx="25.22" ry="25.22"/>
+  <path class="cls-2" d="m44.17,77.36v-37.81c0-.97.79-1.76,1.76-1.76h39.27c1.58,0,2.36,1.93,1.22,3.03l-39.27,37.81c-1.12,1.08-2.98.28-2.98-1.27Z"/>
+  <path class="cls-2" d="m73.59,74.71v37.81c0,.97-.79,1.76-1.76,1.76h-39.27c-1.58,0-2.36-1.93-1.22-3.03l39.27-37.81c1.12-1.08,2.98-.28,2.98,1.27Z"/>
+</svg>
