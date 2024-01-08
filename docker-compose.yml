@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  livestream:
+    build: ./LiveStream
+    restart: unless-stopped
+    ports:
+      - 8010:80
+  quickpoll:
+    build: ./Vote
+    restart: unless-stopped
+    ports:
+      - 8011:5000
