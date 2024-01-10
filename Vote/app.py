@@ -10,10 +10,6 @@ from quickpoll import Poll
 app = Flask(__name__, static_url_path='')
 poll_cache = None
 
-# attach the CORS wrapper to the app
-CORS(app, supports_credentials=True) 
-
-
 def load_polls():
     """Loads up the polls from the configuration file."""
     global poll_cache
@@ -52,6 +48,11 @@ def render_index():
     """Renders the main page template."""
     return app.send_static_file('vote.html')
     #return render_template('index.html', polls=poll_cache)
+
+
+@app.route('/live')
+def render_live():
+    return app.send_static_file('live/index.html')
 
 
 @app.route('/poll/<name>')
@@ -134,4 +135,7 @@ def cast_vote(name):
 
 load_polls()
 if __name__ == '__main__':
-    app.run()
+    # attach the CORS wrapper to the app
+    #CORS(app, supports_credentials=True)
+
+    app.run(host='0.0.0.0')

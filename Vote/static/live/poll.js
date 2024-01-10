@@ -5,7 +5,7 @@ var requestOptions = {
 
 function getEmotions(){
     setInterval(async function(){
-      const res = await fetch("http://127.0.0.1:5000/api/most_voted", requestOptions)
+      const res = await fetch("http://vote.right-margin.ct1.iade.xyz/api/most_voted", requestOptions)
       .then(response => response.json())
       .then(data => {
         console.log(data.result);
