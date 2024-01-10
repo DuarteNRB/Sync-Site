@@ -50,6 +50,11 @@ def render_index():
     #return render_template('index.html', polls=poll_cache)
 
 
+@app.route('/live')
+def render_live():
+    return app.send_static_file('live/index.html')
+
+
 @app.route('/poll/<name>')
 def render_poll(name):
     """Renders the single poll template."""
